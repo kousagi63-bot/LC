@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Stackly Client Portal</title>
+  <meta name="description" content="Client dashboard for Stackly. Manage your matters, appointments, documents, and firm communications." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body class="dashboard">
+
+  <div class="dash-shell">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a class="sidebar-brand" href="index.html"><img src="assets/img/logo.webp" alt="Stackly" /></a>
+
+      <div class="sidebar-profile">
+        <span class="avatar-initials gold-bg md" data-user-first-initial></span>
+        <div class="sidebar-profile-meta">
+          <div class="sidebar-profile-name" data-user-name></div>
+          <div class="sidebar-profile-email" data-user-email></div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Sidebar navigation">
+        <ul>
+          <li class="sidebar-label">Main</li>
+          <li><a class="sidebar-link active" href="user-dashboard.html"><i class="fa-solid fa-gauge-high"></i>Dashboard</a></li>
+          <li><a class="sidebar-link" href="user-appointments.html"><i class="fa-solid fa-calendar-check"></i>Appointments</a></li>
+          <li><a class="sidebar-link" href="user-documents.html"><i class="fa-solid fa-file-lines"></i>Documents</a></li>
+          <li><a class="sidebar-link" href="user-payments.html"><i class="fa-solid fa-credit-card"></i>Payments</a></li>
+          <li><a class="sidebar-link" href="user-services.html"><i class="fa-solid fa-scale-balanced"></i>Services</a></li>
+          <li><a class="sidebar-link" href="user-notifications.html"><i class="fa-regular fa-bell"></i>Notifications</a></li>
+          <li><a class="sidebar-link" href="user-support.html"><i class="fa-solid fa-headset"></i>Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <ul>
+          <li><a class="sidebar-link" href="index.html"><i class="fa-solid fa-house"></i>Go to Home</a></li>
+          <li><a class="sidebar-link" href="user-profile.html"><i class="fa-solid fa-user"></i>My Profile</a></li>
+          <li><a class="sidebar-link" href="user-settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          <li><a class="sidebar-link" href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="dash-main">
+
+      <!-- Topbar -->
+      <header class="dash-topbar">
+        <h2 class="topbar-title">Client Dashboard</h2>
+      </header>
+
+      <!-- Content -->
+      <div class="dash-content">
+
+        <!-- Welcome -->
+        <div class="welcome-card">
+          <h2>Welcome back, <span data-user-firstname></span></h2>
+          <p>You have 3 active matters and 1 upcoming appointment. Your counsel is fully briefed and ready to move forward on the legal matter.</p>
+          <span class="member-badge"><i class="fa-solid fa-crown"></i>Platinum Client</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="row g-4 mt-1">
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon gold"><i class="fa-solid fa-scale-balanced"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Active Matters</div>
+                <div class="stat-value" data-count="3">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>1 this month</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon navy"><i class="fa-solid fa-calendar-check"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Appointments</div>
+                <div class="stat-value" data-count="1">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Upcoming</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon oxblood"><i class="fa-solid fa-file-lines"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Documents</div>
+                <div class="stat-value" data-count="18">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>+2 this week</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon green"><i class="fa-solid fa-credit-card"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Outstanding</div>
+                <div class="stat-value" data-prefix="$" data-count="4750">0</div>
+                <span class="stat-trend down"><i class="fa-solid fa-arrow-down"></i>Due Aug 12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming appointments + recent activity -->
+        <div class="row g-4 mt-1">
+          <div class="col-lg-7">
+            <div class="dash-card">
+              <div class="dash-card-head">
+                <h3>Upcoming Appointments</h3>
+                <a class="btn-link" href="user-appointments.html">Manage <i class="fa-solid fa-arrow-right ms-1"></i></a>
+              </div>
+              <div class="appt-item">
+                <div class="appt-date"><div class="day">12</div><div class="month">Aug</div></div>
+                <div class="appt-info">
+                  <div class="title">Legal Documentation Review</div>
+                  <div class="meta">Video call &bull; 10:00 AM &bull; Sarah Chen, Senior Counsel</div>
+                </div>
+                <span class="status-badge confirmed">Confirmed</span>
+              </div>
+              <div class="appt-item">
+                <div class="appt-date"><div class="day">19</div><div class="month">Aug</div></div>
+                <div class="appt-info">
+                  <div class="title">Contract Review</div>
+                  <div class="meta">In person &bull; 2:30 PM &bull; 120 Broadway, Suite 2100</div>
+                </div>
+                <span class="status-badge pending">Pending</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="dash-card h-100">
+              <div class="dash-card-head">
+                <h3>Recent Activity</h3>
+                <span class="muted">Last 7 days</span>
+              </div>
+              <div class="activity-list">
+                <div class="activity-item">
+                  <span class="activity-dot"><i class="fa-solid fa-file-lines"></i></span>
+                  <div class="activity-body">
+                    <div class="title">Document uploaded</div>
+                    <div class="desc">Settlement Agreement.pdf was added to Matter #124.</div>
+                    <div class="time">2 hours ago</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <span class="activity-dot"><i class="fa-solid fa-envelope"></i></span>
+                  <div class="activity-body">
+                    <div class="title">Message from Sarah Chen</div>
+                    <div class="desc">Re: draft terms for the vendor agreement.</div>
+                    <div class="time">Yesterday, 5:12 PM</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <span class="activity-dot"><i class="fa-solid fa-credit-card"></i></span>
+                  <div class="activity-body">
+                    <div class="title">Invoice #2026-081 paid</div>
+                    <div class="desc">Retainer top-up of $5,000.00 confirmed.</div>
+                    <div class="time">Aug 4, 2026</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="row g-4 mt-1">
+          <div class="col-12">
+            <div class="dash-card">
+              <div class="dash-card-head">
+                <h3>Quick Actions</h3>
+                <span class="muted">Everything you need, one click away</span>
+              </div>
+              <div class="quick-actions">
+                <a class="quick-action" href="user-appointments.html"><i class="fa-solid fa-calendar-plus"></i>Book Appointment</a>
+                <a class="quick-action" href="user-documents.html"><i class="fa-solid fa-file-arrow-up"></i>Upload Document</a>
+                <a class="quick-action" href="user-payments.html"><i class="fa-solid fa-money-bill-wave"></i>Make Payment</a>
+                <a class="quick-action" href="user-services.html"><i class="fa-solid fa-scale-balanced"></i>Explore Services</a>
+                <a class="quick-action" href="user-support.html"><i class="fa-solid fa-headset"></i>Contact Support</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

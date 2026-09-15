@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointments — Stackly Client Portal</title>
+  <meta name="description" content="Manage your consultations, case meetings, and appointment requests with Stackly." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body class="dashboard">
+
+  <div class="dash-shell">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a class="sidebar-brand" href="index.html"><img src="assets/img/logo.webp" alt="Stackly" /></a>
+
+      <div class="sidebar-profile">
+        <span class="avatar-initials gold-bg md" data-user-first-initial></span>
+        <div class="sidebar-profile-meta">
+          <div class="sidebar-profile-name" data-user-name></div>
+          <div class="sidebar-profile-email" data-user-email></div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Sidebar navigation">
+        <ul>
+          <li class="sidebar-label">Main</li>
+          <li><a class="sidebar-link" href="user-dashboard.html"><i class="fa-solid fa-gauge-high"></i>Dashboard</a></li>
+          <li><a class="sidebar-link active" href="user-appointments.html"><i class="fa-solid fa-calendar-check"></i>Appointments</a></li>
+          <li><a class="sidebar-link" href="user-documents.html"><i class="fa-solid fa-file-lines"></i>Documents</a></li>
+          <li><a class="sidebar-link" href="user-payments.html"><i class="fa-solid fa-credit-card"></i>Payments</a></li>
+          <li><a class="sidebar-link" href="user-services.html"><i class="fa-solid fa-scale-balanced"></i>Services</a></li>
+          <li><a class="sidebar-link" href="user-notifications.html"><i class="fa-regular fa-bell"></i>Notifications</a></li>
+          <li><a class="sidebar-link" href="user-support.html"><i class="fa-solid fa-headset"></i>Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <ul>
+          <li><a class="sidebar-link" href="index.html"><i class="fa-solid fa-house"></i>Go to Home</a></li>
+          <li><a class="sidebar-link" href="user-profile.html"><i class="fa-solid fa-user"></i>My Profile</a></li>
+          <li><a class="sidebar-link" href="user-settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          <li><a class="sidebar-link" href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="dash-main">
+
+      <!-- Topbar -->
+      <header class="dash-topbar">
+        <h2 class="topbar-title">Appointments</h2>
+      </header>
+
+      <!-- Content -->
+      <div class="dash-content">
+
+        <div class="dash-hello">
+          <h2>Appointments</h2>
+          <p>Manage your consultations, case meetings, and appointment requests.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="row g-4 mt-1">
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon gold"><i class="fa-solid fa-calendar-check"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Upcoming</div>
+                <div class="stat-value" data-count="2">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Next in 12 days</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon navy"><i class="fa-solid fa-clock"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Pending Requests</div>
+                <div class="stat-value" data-count="1">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Awaiting confirmation</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon green"><i class="fa-solid fa-check-circle"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Completed</div>
+                <div class="stat-value" data-count="14">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>+2 this month</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon oxblood"><i class="fa-solid fa-xmark-circle"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Cancelled</div>
+                <div class="stat-value" data-count="3">0</div>
+                <span class="stat-trend down"><i class="fa-solid fa-arrow-down"></i>Last one in June</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming + book -->
+        <div class="row g-4 mt-1">
+          <div class="col-lg-7">
+            <div class="dash-card h-100">
+              <div class="dash-card-head">
+                <h3>Upcoming Appointments</h3>
+                <span class="muted">Sorted by date</span>
+              </div>
+              <div class="appt-item">
+                <div class="appt-date"><div class="day">12</div><div class="month">Aug</div></div>
+                <div class="appt-info">
+                  <div class="title">Legal Documentation Review</div>
+                  <div class="meta">Video call &bull; 10:00 AM &bull; Sarah Chen, Senior Counsel</div>
+                </div>
+                <span class="status-badge confirmed">Confirmed</span>
+              </div>
+              <div class="appt-item">
+                <div class="appt-date"><div class="day">19</div><div class="month">Aug</div></div>
+                <div class="appt-info">
+                  <div class="title">Board Resolutions &amp; Governance Check-in</div>
+                  <div class="meta">In person &bull; 2:30 PM &bull; 120 Broadway, Suite 2100</div>
+                </div>
+                <span class="status-badge pending">Pending</span>
+              </div>
+              <div class="appt-item">
+                <div class="appt-date"><div class="day">02</div><div class="month">Sep</div></div>
+                <div class="appt-info">
+                  <div class="title">Vendor Agreement Terms Review</div>
+                  <div class="meta">Video call &bull; 11:00 AM &bull; David Osei</div>
+                </div>
+                <span class="status-badge confirmed">Confirmed</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="dash-card h-100">
+              <div class="dash-card-head">
+                <h3>Book an Appointment</h3>
+                <span class="muted">We confirm within 4 hours</span>
+              </div>
+              <form id="appointmentRequestForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                  <label for="apptService" class="form-label">Service</label>
+                  <select class="form-select" id="apptService" required>
+                    <option value="">Select a service...</option>
+                    <option>Legal Documentation</option>
+                    <option>Civil Litigation</option>
+                    <option>Contract Review</option>
+                    <option>Employment Law</option>
+                    <option>Family Law</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="apptCounsel" class="form-label">Preferred Counsel</label>
+                  <select class="form-select" id="apptCounsel" required>
+                    <option value="" disabled selected>Select counsel...</option>
+                    <option>Any available counsel</option>
+                    <option>Sarah Chen</option>
+                    <option>David Osei</option>
+                    <option>Amara Diallo</option>
+                    <option>Katarina Novak</option>
+                  </select>
+                </div>
+                <div class="row g-3">
+                  <div class="col-6">
+                    <label for="apptDate" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="apptDate" required />
+                  </div>
+                  <div class="col-6">
+                    <label for="apptTime" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="apptTime" required />
+                  </div>
+                </div>
+                <div class="mb-3 mt-3">
+                  <label for="apptNotes" class="form-label">Notes</label>
+                  <textarea class="form-control" id="apptNotes" rows="2" placeholder="Briefly describe what you need to discuss" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold w-100"><i class="fa-solid fa-calendar-plus me-2"></i>Request Appointment</button>
+                <div class="appointment-message fs-14 mt-3" hidden></div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- History -->
+        <div class="row g-4 mt-1">
+          <div class="col-12">
+            <div class="dash-card table-card">
+              <div class="table-toolbar">
+                <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Search appointments..." aria-label="Search appointments" data-table-search="appointmentsTable" /></div>
+                <select data-filter-col="3" data-table-search="appointmentsTable" aria-label="Filter by status">
+                  <option value="">All statuses</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-table" id="appointmentsTable">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Matter / Topic</th>
+                      <th>Counsel</th>
+                      <th>Status</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Aug 12, 2026 &bull; 10:00 AM</td>
+                      <td>Legal Documentation Review</td>
+                      <td>Sarah Chen</td>
+                      <td><span class="status-badge confirmed">Confirmed</span></td>
+                      <td>Video call</td>
+                    </tr>
+                    <tr>
+                      <td>Aug 19, 2026 &bull; 2:30 PM</td>
+                      <td>Contract Review</td>
+                      <td>Sarah Chen</td>
+                      <td><span class="status-badge pending">Pending</span></td>
+                      <td>In person</td>
+                    </tr>
+                    <tr>
+                      <td>Jul 28, 2026 &bull; 11:00 AM</td>
+                      <td>Property Transaction Closing</td>
+                      <td>David Osei</td>
+                      <td><span class="status-badge active">Completed</span></td>
+                      <td>Video call</td>
+                    </tr>
+                    <tr>
+                      <td>Jul 15, 2026 &bull; 3:00 PM</td>
+                      <td>Retainer &amp; Billing Sync</td>
+                      <td>Amara Diallo</td>
+                      <td><span class="status-badge active">Completed</span></td>
+                      <td>Phone call</td>
+                    </tr>
+                    <tr>
+                      <td>Jun 30, 2026 &bull; 9:30 AM</td>
+                      <td>Employment Policy Review</td>
+                      <td>David Osei</td>
+                      <td><span class="status-badge inactive">Cancelled</span></td>
+                      <td>In person</td>
+                    </tr>
+                    <tr>
+                      <td>Jun 18, 2026 &bull; 1:00 PM</td>
+                      <td>IP Portfolio Intake</td>
+                      <td>Katarina Novak</td>
+                      <td><span class="status-badge active">Completed</span></td>
+                      <td>Video call</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="dash-pagination" data-pagination="appointmentsTable" data-per-page="5">
+                <span class="info"></span>
+                <div class="pages"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

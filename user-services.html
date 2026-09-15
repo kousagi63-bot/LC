@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Stackly Client Portal</title>
+  <meta name="description" content="Explore the legal services available to you as a Stackly client." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body class="dashboard">
+
+  <div class="dash-shell">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a class="sidebar-brand" href="index.html"><img src="assets/img/logo.webp" alt="Stackly" /></a>
+
+      <div class="sidebar-profile">
+        <span class="avatar-initials gold-bg md" data-user-first-initial></span>
+        <div class="sidebar-profile-meta">
+          <div class="sidebar-profile-name" data-user-name></div>
+          <div class="sidebar-profile-email" data-user-email></div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Sidebar navigation">
+        <ul>
+          <li class="sidebar-label">Main</li>
+          <li><a class="sidebar-link" href="user-dashboard.html"><i class="fa-solid fa-gauge-high"></i>Dashboard</a></li>
+          <li><a class="sidebar-link" href="user-appointments.html"><i class="fa-solid fa-calendar-check"></i>Appointments</a></li>
+          <li><a class="sidebar-link" href="user-documents.html"><i class="fa-solid fa-file-lines"></i>Documents</a></li>
+          <li><a class="sidebar-link" href="user-payments.html"><i class="fa-solid fa-credit-card"></i>Payments</a></li>
+          <li><a class="sidebar-link active" href="user-services.html"><i class="fa-solid fa-scale-balanced"></i>Services</a></li>
+          <li><a class="sidebar-link" href="user-notifications.html"><i class="fa-regular fa-bell"></i>Notifications</a></li>
+          <li><a class="sidebar-link" href="user-support.html"><i class="fa-solid fa-headset"></i>Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <ul>
+          <li><a class="sidebar-link" href="index.html"><i class="fa-solid fa-house"></i>Go to Home</a></li>
+          <li><a class="sidebar-link" href="user-profile.html"><i class="fa-solid fa-user"></i>My Profile</a></li>
+          <li><a class="sidebar-link" href="user-settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          <li><a class="sidebar-link" href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="dash-main">
+
+      <!-- Topbar -->
+      <header class="dash-topbar">
+        <h2 class="topbar-title">Services</h2>
+      </header>
+
+      <!-- Content -->
+      <div class="dash-content">
+
+        <div class="dash-hello">
+          <h2>Our Services</h2>
+          <p>Explore the practice areas available to you under your engagement.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="row g-4 mt-1">
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon gold"><i class="fa-solid fa-scale-balanced"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Available Services</div>
+                <div class="stat-value" data-count="8">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Covered by retainer</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon navy"><i class="fa-solid fa-file-contract"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Active Engagements</div>
+                <div class="stat-value" data-count="3">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Across 3 matters</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon green"><i class="fa-solid fa-clock"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Avg. Response Time</div>
+                <div class="stat-value" data-count="4">0<span style="font-size:0.55em;margin-left:2px;">hrs</span></div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Business hours</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon oxblood"><i class="fa-solid fa-star"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Client Rating</div>
+                <div class="stat-value" data-count="98" data-suffix="%">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services grid -->
+        <div class="row g-4 mt-1">
+          <div class="col-md-6 col-xl-4">
+            <div class="dash-card hoverable h-100">
+              <div class="dash-card-head">
+                <span class="stat-icon gold"><i class="fa-solid fa-arrows-rotate"></i></span>
+                <h3 class="ms-2 mb-0">Legal Documentation</h3>
+              </div>
+              <p class="muted" style="font-size:0.85rem;">Contract drafting, review, and legal document preparation for individuals and businesses.</p>
+              <a class="btn btn-outline-primary btn-sm" href="user-appointments.html"><i class="fa-solid fa-calendar-plus me-1"></i>Book Consultation</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="dash-card hoverable h-100">
+              <div class="dash-card-head">
+                <span class="stat-icon navy"><i class="fa-solid fa-gavel"></i></span>
+                <h3 class="ms-2 mb-0">Civil Litigation</h3>
+              </div>
+              <p class="muted" style="font-size:0.85rem;">Dispute resolution, arbitration, and representation in civil and contractual conflicts.</p>
+              <a class="btn btn-outline-primary btn-sm" href="user-appointments.html"><i class="fa-solid fa-calendar-plus me-1"></i>Book Consultation</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="dash-card hoverable h-100">
+              <div class="dash-card-head">
+                <span class="stat-icon green"><i class="fa-solid fa-file-signature"></i></span>
+                <h3 class="ms-2 mb-0">Contract Review</h3>
+              </div>
+              <p class="muted" style="font-size:0.85rem;">Drafting, review, and negotiation of vendor, client, partnership, and employment agreements.</p>
+              <a class="btn btn-outline-primary btn-sm" href="user-appointments.html"><i class="fa-solid fa-calendar-plus me-1"></i>Book Consultation</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="dash-card hoverable h-100">
+              <div class="dash-card-head">
+                <span class="stat-icon oxblood"><i class="fa-solid fa-user-tie"></i></span>
+                <h3 class="ms-2 mb-0">Employment Law</h3>
+              </div>
+              <p class="muted" style="font-size:0.85rem;">Workplace rights, disputes, and representation for employees and employers.</p>
+              <a class="btn btn-outline-primary btn-sm" href="user-appointments.html"><i class="fa-solid fa-calendar-plus me-1"></i>Book Consultation</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="dash-card hoverable h-100">
+              <div class="dash-card-head">
+                <span class="stat-icon gold"><i class="fa-solid fa-shield-halved"></i></span>
+                <h3 class="ms-2 mb-0">Family Law</h3>
+              </div>
+              <p class="muted" style="font-size:0.85rem;">Divorce, custody, adoption, and domestic relations with compassionate counsel.</p>
+              <a class="btn btn-outline-primary btn-sm" href="user-appointments.html"><i class="fa-solid fa-calendar-plus me-1"></i>Book Consultation</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="dash-card hoverable h-100">
+              <div class="dash-card-head">
+                <span class="stat-icon navy"><i class="fa-solid fa-lightbulb"></i></span>
+                <h3 class="ms-2 mb-0">IP Protection</h3>
+              </div>
+              <p class="muted" style="font-size:0.85rem;">Trademarks, patents, copyrights, and portfolio management for your assets.</p>
+              <a class="btn btn-outline-primary btn-sm" href="user-appointments.html"><i class="fa-solid fa-calendar-plus me-1"></i>Book Consultation</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>
