@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logs — Stackly Admin</title>
+  <meta name="description" content="Review system and user activity logs." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body class="dashboard">
+
+  <div class="dash-shell">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a class="sidebar-brand" href="index.html"><img src="assets/img/logo.webp" alt="Stackly" /></a>
+
+      <div class="sidebar-profile">
+        <span class="avatar-initials gold-bg md" data-user-first-initial></span>
+        <div class="sidebar-profile-meta">
+          <div class="sidebar-profile-name" data-user-name></div>
+          <div class="sidebar-profile-email" data-user-email></div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Sidebar navigation">
+        <ul>
+          <li class="sidebar-label">Main</li>
+          <li><a class="sidebar-link" href="admin-dashboard.html"><i class="fa-solid fa-gauge-high"></i>Dashboard</a></li>
+          <li><a class="sidebar-link" href="admin-appointments.html"><i class="fa-solid fa-calendar-check"></i>Appointments</a></li>
+          <li><a class="sidebar-link" href="admin-analytics.html"><i class="fa-solid fa-chart-line"></i>Analytics</a></li>
+          <li><a class="sidebar-link" href="admin-users.html"><i class="fa-solid fa-users"></i>Clients</a></li>
+          <li><a class="sidebar-link" href="admin-messages.html"><i class="fa-regular fa-envelope"></i>Messages</a></li>
+          <li><a class="sidebar-link" href="admin-services.html"><i class="fa-solid fa-scale-balanced"></i>Services</a></li>
+          <li><a class="sidebar-link" href="admin-reports.html"><i class="fa-solid fa-file-lines"></i>Reports</a></li>
+          <li><a class="sidebar-link active" href="admin-logs.html"><i class="fa-solid fa-clipboard-list"></i>Logs</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <ul>
+          <li><a class="sidebar-link" href="index.html"><i class="fa-solid fa-house"></i>Go to Home</a></li>
+          <li><a class="sidebar-link" href="admin-settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          <li><a class="sidebar-link" href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="dash-main">
+
+      <!-- Topbar -->
+      <header class="dash-topbar">
+        <h2 class="topbar-title">Logs</h2>
+      </header>
+
+      <!-- Content -->
+      <div class="dash-content">
+
+        <div class="dash-hello">
+          <h2>Logs</h2>
+          <p>Review system and user activity across the firm.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="row g-4 mt-1">
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon gold"><i class="fa-solid fa-right-to-bracket"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Sign-ins (7d)</div>
+                <div class="stat-value" data-count="342">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>12% vs last week</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon green"><i class="fa-solid fa-wrench"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">System Events (7d)</div>
+                <div class="stat-value" data-count="28">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>All resolved</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon oxblood"><i class="fa-solid fa-shield-halved"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Security Alerts</div>
+                <div class="stat-value" data-count="0">0</div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>No threats</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <span class="stat-icon navy"><i class="fa-solid fa-clock"></i></span>
+              <div class="stat-info">
+                <div class="stat-label">Avg. Session</div>
+                <div class="stat-value" data-count="24">0<span style="font-size:0.6em;"> min</span></div>
+                <span class="stat-trend up"><i class="fa-solid fa-arrow-up"></i>Healthy range</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Log table -->
+        <div class="dash-card table-card mt-4">
+          <div class="table-toolbar">
+            <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Search logs..." aria-label="Search logs" data-table-search="logsTable" /></div>
+            <select data-filter-col="1" data-table-search="logsTable" aria-label="Filter by type">
+              <option value="">All types</option>
+              <option value="Login">Login</option>
+              <option value="System">System</option>
+              <option value="Security">Security</option>
+            </select>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table" id="logsTable">
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Type</th>
+                  <th>User</th>
+                  <th>IP Address</th>
+                  <th>Timestamp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Signed in to admin portal</td>
+                  <td><span class="status-badge active">Login</span></td>
+                  <td>Rebecca Okafor</td>
+                  <td>203.0.113.42</td>
+                  <td>Jul 31, 2026 09:12</td>
+                </tr>
+                <tr>
+                  <td>Created client account for T. Rivera</td>
+                  <td><span class="status-badge navy">System</span></td>
+                  <td>Rebecca Okafor</td>
+                  <td>203.0.113.42</td>
+                  <td>Jul 30, 2026 14:47</td>
+                </tr>
+                <tr>
+                  <td>Failed login attempt (locked out)</td>
+                  <td><span class="status-badge suspended">Security</span></td>
+                  <td>Unknown</td>
+                  <td>198.51.100.7</td>
+                  <td>Jul 30, 2026 03:21</td>
+                </tr>
+                <tr>
+                  <td>Signed in to client portal</td>
+                  <td><span class="status-badge active">Login</span></td>
+                  <td>Priya Sharma</td>
+                  <td>192.0.2.98</td>
+                  <td>Jul 29, 2026 18:02</td>
+                </tr>
+                <tr>
+                  <td>Export of Q2 financial report</td>
+                  <td><span class="status-badge navy">System</span></td>
+                  <td>Rebecca Okafor</td>
+                  <td>203.0.113.42</td>
+                  <td>Jul 28, 2026 11:33</td>
+                </tr>
+                <tr>
+                  <td>Password reset requested</td>
+                  <td><span class="status-badge suspended">Security</span></td>
+                  <td>Marcus Lee</td>
+                  <td>192.0.2.155</td>
+                  <td>Jul 27, 2026 22:19</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dash-pagination" data-pagination="logsTable" data-per-page="6">
+            <span class="info"></span>
+            <div class="pages"></div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

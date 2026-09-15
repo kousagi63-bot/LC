@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Stackly</title>
+  <meta name="description" content="Contact Stackly — reach our legal team, book a consultation, or send us a message about your legal matter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="assets/img/logo.webp" alt="Stackly" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><i class="fa-solid fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="practice-areas.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="insights.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-login"><a class="nav-link nav-cta" href="login.html"><i class="fa-solid fa-arrow-right-to-bracket me-2"></i>Login</a></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner page-banner-contact">
+    <div class="page-banner-bg"></div>
+    <div class="page-banner-overlay"></div>
+    <div class="container">
+      <h1 data-aos="fade-up">Contact Us</h1>
+      <p class="page-banner-subtitle" data-aos="fade-up" data-aos-delay="100">Schedule a confidential consultation or speak directly with our experienced legal advisors today.</p>
+      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">Contact</li></ol></nav>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="contact-info-side">
+            <div class="contact-info-heading">
+              <span class="section-label" data-aos="fade-up">Get In Touch</span>
+              <h2 class="section-title mt-2" data-aos="fade-up">Let&rsquo;s Talk About Your Legal Needs</h2>
+              <p class="section-subtitle mt-3" data-aos="fade-up">Our attorneys are ready to assist with corporate, civil, criminal, family, property, and employment matters. Reach out and we&rsquo;ll respond within one business day.</p>
+            </div>
+            <div data-aos="fade-up">
+              <div class="contact-info-item">
+                <div class="icon"><i class="fa-regular fa-building-columns"></i></div>
+                <div><h6>Headquarters</h6><p>120 Broadway, Suite 2100, New York, NY 10271, USA</p></div>
+              </div>
+              <div class="contact-info-item">
+                <div class="icon"><i class="fa-regular fa-phone"></i></div>
+                <div><h6>Phone</h6><p><a href="tel:+12125550900" class="text-decoration-none">+1 (212) 555-0900</a></p></div>
+              </div>
+              <div class="contact-info-item">
+                <div class="icon"><i class="fa-regular fa-envelope"></i></div>
+                <div><h6>Email</h6><p><a href="mailto:info@stackly.com" class="text-decoration-none">info@stackly.com</a></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <form class="contact-form" novalidate data-aos="fade-up">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Full Name</label>
+                <input type="text" class="form-control" placeholder="John Smith" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Email Address</label>
+                <input type="email" class="form-control" placeholder="john@example.com" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Phone</label>
+                <input type="tel" class="form-control" placeholder="+1 (555) 000-0000" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Subject</label>
+                <select class="form-select" required>
+                  <option value="" selected disabled>Select a topic</option>
+                  <option>Corporate Law</option>
+                  <option>Civil Law</option>
+                  <option>Criminal Law</option>
+                  <option>Family Law</option>
+                  <option>Property Law</option>
+                  <option>Employment Law</option>
+                  <option>Contract &amp; Agreement Services</option>
+                  <option>Legal Documentation</option>
+                  <option>Litigation &amp; Dispute Resolution</option>
+                  <option>Intellectual Property</option>
+                  <option>Consultation Booking</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Company / Organization</label>
+                <input type="text" class="form-control" placeholder="Company or organization" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Preferred Contact Method</label>
+                <select class="form-select">
+                  <option value="" selected disabled>Select a method</option>
+                  <option>Email</option>
+                  <option>Phone</option>
+                  <option>Video Consultation</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Message</label>
+                <textarea class="form-control" placeholder="Briefly describe how we can help you." required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-gold btn-lg"><i class="fa-regular fa-paper-plane me-2"></i>Send Message</button>
+              </div>
+              <div class="col-12">
+                <div class="newsletter-message" id="contactMessage"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="map-wrapper mt-5" data-aos="fade-up">
+        <iframe src="https://maps.google.com/maps?q=120%20Broadway%2C%20New%20York%2C%20NY%2010271&output=embed" title="Stackly Headquarters — 120 Broadway, New York" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Offices -->
+  <section class="section-padding bg-navy-800">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-label" data-aos="fade-up">Our Offices</span>
+        <h2 class="section-title" data-aos="fade-up">Where to Find Us</h2>
+        <p class="section-subtitle mx-auto mt-2" data-aos="fade-up">Four offices serving clients in every major region.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up">
+          <div class="value-item card-image-top"><div class="card-body"><div class="icon"><i class="fa-solid fa-building-columns"></i></div><h5>New York</h5><p><strong>Headquarters</strong><br/>120 Broadway, Suite 2100<br/>New York, NY 10271<br/>+1 (212) 555-0900</p></div></div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up">
+          <div class="value-item card-image-top"><div class="card-body"><div class="icon"><i class="fa-solid fa-landmark"></i></div><h5>London</h5><p><strong>Europe Office</strong><br/>30 St Mary Axe<br/>London EC3A 8BF<br/>+44 (20) 7555-1200</p></div></div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up">
+          <div class="value-item card-image-top"><div class="card-body"><div class="icon"><i class="fa-solid fa-city"></i></div><h5>Singapore</h5><p><strong>Asia-Pacific Office</strong><br/>1 Raffles Place, #28-00<br/>Singapore 048616<br/>+65 6555 8900</p></div></div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up">
+          <div class="value-item card-image-top"><div class="card-body"><div class="icon"><i class="fa-solid fa-mosque"></i></div><h5>Dubai</h5><p><strong>Middle East Office</strong><br/>DIFC, Gate Village 7<br/>Dubai, UAE<br/>+971 (4) 555 7800</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-5">
+            <span class="section-label" data-aos="fade-up">FAQs</span>
+            <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+          </div>
+          <div class="faq-accordion accordion" id="contactFaq">
+            <div class="accordion-item" data-aos="fade-up">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How quickly will you respond to my inquiry?</button></h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">We aim to respond to all inquiries within one business day. Matters requiring urgent attention can reach our client emergency line at any time.</div></div>
+            </div>
+            <div class="accordion-item" data-aos="fade-up">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Do you offer an initial consultation?</button></h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Yes. We offer a no-obligation initial consultation with a senior attorney to understand your matter, assess your options, and outline next steps.</div></div>
+            </div>
+            <div class="accordion-item" data-aos="fade-up">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">What areas of law do you cover?</button></h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">We handle corporate law, civil litigation, criminal defense, family law, property law, employment law, contract and agreement services, legal documentation, litigation and dispute resolution, and intellectual property.</div></div>
+            </div>
+            <div class="accordion-item" data-aos="fade-up">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Is my information kept confidential?</button></h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><div class="accordion-body">Yes. All communications are protected by attorney&ndash;client privilege and our strict data security policies.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section-padding newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="text-center mb-4">
+        <span class="section-label" data-aos="fade-up">Stay Informed</span>
+        <h2 class="section-title">Subscribe to Our Newsletter</h2>
+        <p class="section-subtitle mx-auto mt-2" data-aos="fade-up">Receive legal updates, case analysis, and practical tips delivered to your inbox.</p>
+      </div>
+      <form class="newsletter-form" novalidate data-aos="fade-up">
+        <div class="newsletter-input-group">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address" />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </div>
+        <div class="newsletter-message" id="newsletterMessage"></div>
+      </form>
+      <p class="newsletter-disclaimer text-center" data-aos="fade-up">No spam. Unsubscribe anytime. We respect your privacy.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg">
+          <div class="footer-brand"><img src="assets/img/logo.webp" alt="Stackly" /></div>
+          <p class="mt-3">Trusted legal services for individuals and businesses alike. Reliable, approachable, relentlessly client-focused.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg">
+          <h6>Practice Areas</h6>
+          <ul>
+            <li><a href="practice-areas.html">Corporate Law</a></li>
+            <li><a href="practice-areas.html">Civil Law</a></li>
+            <li><a href="practice-areas.html">Criminal Law</a></li>
+            <li><a href="practice-areas.html">Family Law</a></li>
+            <li><a href="practice-areas.html">Property Law</a></li>
+            <li><a href="practice-areas.html">Intellectual Property</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg footer-quick-links">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html">Blog</a></li>
+            <li><a href="practice-areas.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg">
+          <h6>Office</h6>
+          <ul class="footer-contact">
+            <li><i class="fa-regular fa-location-dot"></i> 120 Broadway, Suite 2100, New York, NY 10271, USA</li>
+            <li><i class="fa-regular fa-phone"></i> <a href="tel:+12125550900">+1 (212) 555-0900</a></li>
+            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:info.com">info@stackly.com</a></li>
+            <li><i class="fa-regular fa-clock"></i> Mon — Fri: 8:30 AM – 6:30 PM</li>
+            <li><i class="fa-regular fa-map"></i> <a href="https://maps.google.com/maps?q=120+Broadway,+New+York">Get Directions <i class="fa-solid fa-arrow-right ms-1" style="font-size:0.7rem;"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg">
+          <h6>Connect</h6>
+          <ul>
+            <li><a href="contact.html"><i class="fa-regular fa-calendar-check me-2"></i>Schedule a Consultation</a></li>
+            <li><a href="tel:+12125550900"><i class="fa-regular fa-phone me-2"></i>Call Us</a></li>
+            <li><a href="mailto:info.com"><i class="fa-regular fa-envelope me-2"></i>Email Us</a></li>
+            <li><a href="contact.html"><i class="fa-regular fa-building me-2"></i>Visit Our Office</a></li>
+            <li><a href="contact.html"><i class="fa-regular fa-circle-question me-2"></i>FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="row">
+        <div class="col-md-6"><p class="footer-bottom mb-0">&copy; 2026 Stackly LLP. All rights reserved.</p></div>
+        <div class="col-md-6 text-md-end"><p class="footer-bottom mb-0">Attorney Advertising &bull; Disclaimer &bull; Terms of Use</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>
