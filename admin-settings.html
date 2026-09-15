@@ -82,19 +82,19 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label for="firmName" class="form-label">Firm Name</label>
-                    <input type="text" class="form-control" id="firmName" value="Stackly &amp; Partners" />
+                    <input type="text" class="form-control" id="firmName" value="Stackly &amp; Partners" required />
                   </div>
                   <div class="col-md-6">
                     <label for="firmPhone" class="form-label">Phone</label>
-                    <input type="tel" class="form-control" id="firmPhone" value="+1 (555) 240-8100" />
+                    <input type="tel" class="form-control" id="firmPhone" value="+1 (555) 240-8100" required />
                   </div>
                   <div class="col-12">
                     <label for="firmEmail" class="form-label">Public Email</label>
-                    <input type="email" class="form-control" id="firmEmail" value="contact@stacklylegal.com" data-email-field />
+                    <input type="email" class="form-control" id="firmEmail" value="contact@stacklylegal.com" data-email-field required />
                   </div>
                   <div class="col-12">
                     <label for="firmAddress" class="form-label">Address</label>
-                    <textarea class="form-control" id="firmAddress" rows="2">100 Harbor Row, Suite 900
+                    <textarea class="form-control" id="firmAddress" rows="2" required>100 Harbor Row, Suite 900
 New York, NY 10005</textarea>
                   </div>
                   <div class="col-12">
@@ -146,15 +146,15 @@ New York, NY 10005</textarea>
               </div>
               <div class="mb-3">
                 <label for="adminNameInput" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="adminNameInput" data-user-name-input />
+                <input type="text" class="form-control" id="adminNameInput" data-user-name-input required />
               </div>
               <div class="mb-3">
                 <label for="adminEmailInput" class="form-label">Email</label>
-                <input type="email" class="form-control" id="adminEmailInput" data-user-email-input data-email-field />
+                <input type="email" class="form-control" id="adminEmailInput" data-user-email-input data-email-field required />
               </div>
               <div class="mb-3">
                 <label for="adminPasswordInput" class="form-label">New Password</label>
-                <input type="password" class="form-control" id="adminPasswordInput" placeholder="Leave blank to keep current" />
+                <input type="password" class="form-control" id="adminPasswordInput" placeholder="Leave blank to keep current" required />
               </div>
               <button type="button" class="btn btn-outline-primary w-100" id="saveAccountBtn">Save Account</button>
               <a href="login.html" class="btn btn-outline-danger w-100 mt-2"><i class="fa-solid fa-arrow-right-from-bracket me-1"></i>Sign Out</a>

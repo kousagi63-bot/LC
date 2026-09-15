@@ -207,15 +207,16 @@
               <form id="uploadDocumentForm">
                 <div class="mb-3">
                   <label for="docFile" class="form-label">File</label>
-                  <input type="file" class="form-control" id="docFile" accept=".pdf,.doc,.docx,.xls,.xlsx" required />
+                  <input type="text" class="form-control" id="docFile" placeholder="e.g. Settlement Agreement.pdf" required />
                 </div>
                 <div class="mb-3">
                   <label for="docTitle" class="form-label">Document Title</label>
-                  <input type="text" class="form-control" id="docTitle" placeholder="e.g. Signed NDA (2026)" />
+                  <input type="text" class="form-control" id="docTitle" placeholder="e.g. Signed NDA (2026)" required />
                 </div>
                 <div class="mb-3">
                   <label for="docMatter" class="form-label">Related Matter</label>
-                  <select class="form-select" id="docMatter">
+                  <select class="form-select" id="docMatter" required>
+                    <option value="" selected disabled>Choose a matter...</option>
                     <option>Matter #124 — Johnson v. State</option>
                     <option>Matter #118 — Vendor Agreement</option>
                     <option>General / Other</option>

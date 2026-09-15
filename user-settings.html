@@ -81,16 +81,16 @@
               <form id="settingsSecurityForm">
                 <div class="mb-3">
                   <label for="currentPassword" class="form-label">Current Password</label>
-                  <input type="password" class="form-control" id="currentPassword" autocomplete="current-password" />
+                  <input type="text" class="form-control" id="currentPassword" autocomplete="current-password" required />
                 </div>
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label for="newPassword" class="form-label">New Password</label>
-                    <input type="password" class="form-control" id="newPassword" autocomplete="new-password" />
+                    <input type="text" class="form-control" id="newPassword" autocomplete="new-password" required />
                   </div>
                   <div class="col-md-6">
                     <label for="confirmPassword" class="form-label">Confirm New Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" autocomplete="new-password" />
+                    <input type="text" class="form-control" id="confirmPassword" autocomplete="new-password" required />
                   </div>
                 </div>
                 <button type="submit" class="btn btn-gold mt-4"><i class="fa-solid fa-lock me-2"></i>Update Password</button>

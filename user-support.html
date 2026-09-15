@@ -74,7 +74,7 @@
         <!-- Contact channels -->
         <div class="row g-4 mt-1">
           <div class="col-md-6 col-xl-3">
-            <div class="dash-card hoverable h-100">
+            <div class="dash-card hoverable contact-card h-100">
               <span class="stat-icon gold mb-3"><i class="fa-solid fa-phone"></i></span>
               <h5 style="font-family:var(--font-display);color:var(--primary);">Call Us</h5>
               <p class="muted" style="font-size:0.85rem;">+1 (212) 555-0900<br />Mon&ndash;Fri, 9:00 AM&ndash;6:00 PM ET</p>
@@ -82,7 +82,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-3">
-            <div class="dash-card hoverable h-100">
+            <div class="dash-card hoverable contact-card h-100">
               <span class="stat-icon navy mb-3"><i class="fa-solid fa-envelope"></i></span>
               <h5 style="font-family:var(--font-display);color:var(--primary);">Email Us</h5>
               <p class="muted" style="font-size:0.85rem;">support@stackly.com<br />Response within 4 business hours</p>
@@ -90,7 +90,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-3">
-            <div class="dash-card hoverable h-100">
+            <div class="dash-card hoverable contact-card h-100">
               <span class="stat-icon green mb-3"><i class="fa-solid fa-comments"></i></span>
               <h5 style="font-family:var(--font-display);color:var(--primary);">Live Chat</h5>
               <p class="muted" style="font-size:0.85rem;">Chat with a client services specialist.<br />Available during business hours</p>
@@ -98,7 +98,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-3">
-            <div class="dash-card hoverable h-100">
+            <div class="dash-card hoverable contact-card h-100">
               <span class="stat-icon oxblood mb-3"><i class="fa-solid fa-building-columns"></i></span>
               <h5 style="font-family:var(--font-display);color:var(--primary);">Visit the Office</h5>
               <p class="muted" style="font-size:0.85rem;">120 Broadway, Suite 2100<br />New York, NY 10271</p>
@@ -118,7 +118,8 @@
               <form id="supportForm">
                 <div class="mb-3">
                   <label for="supportTopic" class="form-label">Topic</label>
-                  <select class="form-select" id="supportTopic">
+                  <select class="form-select" id="supportTopic" required>
+                    <option value="" selected disabled>Choose a topic...</option>
                     <option>Matter or case question</option>
                     <option>Billing or invoice</option>
                     <option>Document access</option>

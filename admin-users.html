@@ -200,15 +200,16 @@
               <form id="addClientForm">
                 <div class="mb-3">
                   <label for="newClientName" class="form-label">Full Name</label>
-                  <input type="text" class="form-control" id="newClientName" placeholder="e.g. Jordan Kim" />
+                  <input type="text" class="form-control" id="newClientName" placeholder="e.g. Jordan Kim" required />
                 </div>
                 <div class="mb-3">
                   <label for="newClientEmail" class="form-label">Email Address</label>
-                  <input type="email" class="form-control" id="newClientEmail" placeholder="client@company.com" />
+                  <input type="email" class="form-control" id="newClientEmail" placeholder="client@company.com" required />
                 </div>
                 <div class="mb-3">
                   <label for="newClientCounsel" class="form-label">Assigned Counsel</label>
-                  <select class="form-select" id="newClientCounsel">
+                  <select class="form-select" id="newClientCounsel" required>
+                    <option value="" selected disabled>Choose counsel...</option>
                     <option>Sarah Chen</option>
                     <option>David Osei</option>
                     <option>Amara Diallo</option>

@@ -166,8 +166,8 @@
               <form id="adminApptForm">
                 <div class="mb-3">
                   <label for="adminApptClient" class="form-label">Client</label>
-                  <select class="form-select" id="adminApptClient">
-                    <option>Select a client...</option>
+                  <select class="form-select" id="adminApptClient" required>
+                    <option value="" selected disabled>Select a client...</option>
                     <option>Rebecca Okafor</option>
                     <option>Marcus Lee</option>
                     <option>Priya Sharma</option>
@@ -177,7 +177,8 @@
                 </div>
                 <div class="mb-3">
                   <label for="adminApptCounsel" class="form-label">Counsel</label>
-                  <select class="form-select" id="adminApptCounsel">
+                  <select class="form-select" id="adminApptCounsel" required>
+                    <option value="" selected disabled>Choose counsel...</option>
                     <option>Sarah Chen</option>
                     <option>David Osei</option>
                     <option>Amara Diallo</option>
@@ -187,11 +188,11 @@
                 <div class="row g-3">
                   <div class="col-6">
                     <label for="adminApptDate" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="adminApptDate" />
+                    <input type="date" class="form-control" id="adminApptDate" required />
                   </div>
                   <div class="col-6">
                     <label for="adminApptTime" class="form-label">Time</label>
-                    <input type="time" class="form-control" id="adminApptTime" />
+                    <input type="time" class="form-control" id="adminApptTime" required />
                   </div>
                 </div>
                 <button type="submit" class="btn btn-gold w-100 mt-4"><i class="fa-solid fa-calendar-plus me-2"></i>Schedule</button>

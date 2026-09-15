@@ -164,14 +164,16 @@
                 </div>
                 <div class="mb-3">
                   <label for="payMethod" class="form-label">Pay From</label>
-                  <select class="form-select" id="payMethod">
+                  <select class="form-select" id="payMethod" required>
+                    <option value="" selected disabled>Choose a payment method...</option>
                     <option>Visa &bull;&bull;&bull;&bull; 4242</option>
                     <option>Personal Bank Account (ACH)</option>
                   </select>
                 </div>
                 <div class="mb-3">
                   <label for="payInvoice" class="form-label">Apply To</label>
-                  <select class="form-select" id="payInvoice">
+                  <select class="form-select" id="payInvoice" required>
+                    <option value="" selected disabled>Choose an invoice...</option>
                     <option>Invoice #2026-084 &mdash; $2,750.00</option>
                     <option>Invoice #2026-083 &mdash; $2,000.00</option>
                     <option>Retainer top-up</option>
