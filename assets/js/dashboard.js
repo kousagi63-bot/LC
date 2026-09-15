@@ -8,32 +8,54 @@
   var body = document.body;
 
   /* --- Sidebar toggle (mobile) ---
-     The top bar no longer has a hamburger, so the page title toggles the
-     off-canvas sidebar on tablets and phones. */
+     A hamburger button is injected into the top bar; on mobile it
+     slides the off-canvas sidebar in/out. A close (X) button is
+     placed inside the sidebar header so it's always reachable. */
   function initSidebar() {
-    var toggle = document.getElementById('sidebarToggle');
     var sidebar = document.getElementById('dashSidebar');
     var overlay = document.getElementById('sidebarOverlay');
     if (!sidebar || !overlay) return;
 
-    if (!toggle) toggle = document.querySelector('.dash-topbar .topbar-title');
-    if (!toggle) return;
+    /* --- hamburger in top bar --- */
+    var topbar = document.querySelector('.dash-topbar');
+    var toggle = document.getElementById('sidebarToggle');
+    if (!toggle && topbar) {
+      toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'hamburger';
+      toggle.id = 'sidebarToggle';
+      toggle.setAttribute('aria-label', 'Toggle sidebar menu');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      topbar.insertBefore(toggle, topbar.firstChild);
+    }
+
+    /* --- close button inside sidebar (top-right) --- */
+    var closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'sidebar-close';
+    closeBtn.setAttribute('aria-label', 'Close sidebar');
+    closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    sidebar.insertBefore(closeBtn, sidebar.querySelector('.sidebar-profile') || sidebar.firstChild);
 
     function close() {
       sidebar.classList.remove('open');
       overlay.classList.remove('show');
-      toggle.setAttribute('aria-expanded', 'false');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
     }
     function open() {
       sidebar.classList.add('open');
       overlay.classList.add('show');
-      toggle.setAttribute('aria-expanded', 'true');
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
     }
 
-    toggle.addEventListener('click', function () {
-      if (window.innerWidth >= 992) return;
-      sidebar.classList.contains('open') ? close() : open();
-    });
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        if (window.innerWidth >= 992) return;
+        sidebar.classList.contains('open') ? close() : open();
+      });
+    }
+    closeBtn.addEventListener('click', close);
     overlay.addEventListener('click', close);
     document.querySelectorAll('.sidebar-link').forEach(function (link) {
       link.addEventListener('click', function () {
@@ -42,6 +64,9 @@
     });
     window.addEventListener('resize', function () {
       if (window.innerWidth >= 992) close();
+    });
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
     });
   }
 
@@ -297,6 +322,7 @@
       if (el.closest('#reportForm')) return true;
       if (el.closest('#adminSettingsForm')) return true;
       if (el.closest('#profileForm')) return true;
+      if (el.id === 'sidebarToggle') return true;
       if (el.id === 'saveAccountBtn') return true;
       if (sidebar && sidebar.contains(el)) return true;
       if (el.closest('.dash-dropdown')) return true;

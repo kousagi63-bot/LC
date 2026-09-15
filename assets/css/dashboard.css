@@ -176,6 +176,30 @@ body.dashboard {
 }
 .hamburger:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
 
+.sidebar-close {
+  display: none;
+  position: absolute;
+  top: 1.15rem;
+  right: 0.85rem;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: background 0.3s var(--transition-smooth);
+}
+.sidebar-close:hover { background: rgba(255,255,255,0.25); }
+
+@media (max-width: 991.98px) {
+  .sidebar-close { display: inline-flex; }
+}
+
 .topbar-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -1080,13 +1104,16 @@ body.dashboard {
 }
 
 /* Responsive */
+@media (min-width: 992px) {
+  .hamburger { display: none; }
+}
+
 @media (max-width: 991.98px) {
   .dash-sidebar { transform: translateX(-100%); box-shadow: 12px 0 40px rgba(0,0,0,0.2); }
   .dash-sidebar.open { transform: translateX(0); }
   .dash-main { margin-left: 0; width: 100%; }
   .dash-topbar { padding: 0.75rem 1rem; }
   .dash-content { padding: 1.25rem 1rem; }
-  .topbar-title { cursor: pointer; }
 }
 
 @media (max-width: 575.98px) {
