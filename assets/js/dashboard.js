@@ -287,6 +287,16 @@
       if (el.matches('a[href="login.html"], a[href="logout.html"]')) return true;
       if (el.matches('[data-dropdown-toggle]')) return true;
       if (el.closest('#appointmentRequestForm')) return true;
+      if (el.closest('#uploadDocumentForm')) return true;
+      if (el.closest('#makePaymentForm')) return true;
+      if (el.closest('#supportForm')) return true;
+      if (el.closest('#settingsSecurityForm')) return true;
+      if (el.closest('#adminApptForm')) return true;
+      if (el.closest('#addClientForm')) return true;
+      if (el.closest('#addServiceForm')) return true;
+      if (el.closest('#reportForm')) return true;
+      if (el.closest('#adminSettingsForm')) return true;
+      if (el.id === 'saveAccountBtn') return true;
       if (sidebar && sidebar.contains(el)) return true;
       if (el.closest('.dash-dropdown')) return true;
       if (notifPage && (el.closest('#notifChips') || el.closest('#notifList'))) return true;
@@ -300,6 +310,378 @@
       e.stopPropagation();
       window.location.href = '404.html';
     }, true);
+  }
+
+  /* --- Admin Schedule Appointment: require Client, Counsel, Date
+     & Time, then redirect only once every detail is filled. --- */
+  function initAdminApptForm() {
+    var form = document.getElementById('adminApptForm');
+    if (!form) return;
+
+    var requiredIds = ['adminApptClient', 'adminApptCounsel', 'adminApptDate', 'adminApptTime'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Schedule Appointment: require Client, Counsel, Date
+     & Time, then redirect only once every detail is filled. --- */
+  function initAdminApptForm() {
+    var form = document.getElementById('adminApptForm');
+    if (!form) return;
+
+    var requiredIds = ['adminApptClient', 'adminApptCounsel', 'adminApptDate', 'adminApptTime'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Add Client: require Name, Email & Counsel, then
+     redirect only once every detail is filled. --- */
+  function initAddClientForm() {
+    var form = document.getElementById('addClientForm');
+    if (!form) return;
+
+    var requiredIds = ['newClientName', 'newClientEmail', 'newClientCounsel'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Add Client: require Name, Email & Counsel, then
+     redirect only once every detail is filled. --- */
+  function initAddClientForm() {
+    var form = document.getElementById('addClientForm');
+    if (!form) return;
+
+    var requiredIds = ['newClientName', 'newClientEmail', 'newClientCounsel'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Add Service: require Name, Category & Fee, then
+     redirect only once every detail is filled. --- */
+  function initAddServiceForm() {
+    var form = document.getElementById('addServiceForm');
+    if (!form) return;
+
+    var requiredIds = ['serviceName', 'serviceCategory', 'serviceFee'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Add Service: require Name, Category & Fee, then
+     redirect only once every detail is filled. --- */
+  function initAddServiceForm() {
+    var form = document.getElementById('addServiceForm');
+    if (!form) return;
+
+    var requiredIds = ['serviceName', 'serviceCategory', 'serviceFee'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Reports: require Start Date, End Date & Template,
+     then redirect only once every detail is filled. --- */
+  function initReportForm() {
+    var form = document.getElementById('reportForm');
+    if (!form) return;
+
+    var requiredIds = ['reportStart', 'reportEnd', 'reportTemplate'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Settings: require all firm profile fields, block letters in
+     the phone box, then redirect only once every detail is filled. --- */
+  function initAdminSettingsForm() {
+    var form = document.getElementById('adminSettingsForm');
+    if (!form) return;
+
+    var phone = document.getElementById('firmPhone');
+    if (phone) {
+      phone.addEventListener('keydown', function (e) {
+        if (e.key.length === 1 && /[a-z]/i.test(e.key)) e.preventDefault();
+      });
+      phone.addEventListener('input', function () {
+        phone.value = phone.value.replace(/[^0-9+()\-. ]/g, '');
+      });
+    }
+
+    var requiredIds = ['firmName', 'firmPhone', 'firmEmail', 'firmAddress'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Admin Save Account: require Name, Email & Password, then
+     redirect only once every detail is filled. --- */
+  function initSaveAccount() {
+    var btn = document.getElementById('saveAccountBtn');
+    if (!btn) return;
+
+    var requiredIds = ['adminNameInput', 'adminEmailInput', 'adminPasswordInput'];
+
+    btn.addEventListener('click', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Update Password: require all three password fields, then
+     redirect only once every detail is filled. --- */
+  function initSettingsSecurityForm() {
+    var form = document.getElementById('settingsSecurityForm');
+    if (!form) return;
+
+    var requiredIds = ['currentPassword', 'newPassword', 'confirmPassword'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Submit a Request: require Topic & Message, then
+     redirect only once every detail is filled. --- */
+  function initSupportForm() {
+    var form = document.getElementById('supportForm');
+    if (!form) return;
+
+    var requiredIds = ['supportTopic', 'supportMessage'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Make a Payment: require Amount, Method & Invoice, then
+     redirect only once every detail is filled. --- */
+  function initMakePaymentForm() {
+    var form = document.getElementById('makePaymentForm');
+    if (!form) return;
+
+    var requiredIds = ['payAmount', 'payMethod', 'payInvoice'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Upload a Document: require File, Title & Matter, then
+     redirect only once every detail is filled. --- */
+  function initUploadDocumentForm() {
+    var form = document.getElementById('uploadDocumentForm');
+    if (!form) return;
+
+    var requiredIds = ['docFile', 'docTitle', 'docMatter'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
   }
 
   /* --- Book an Appointment: require Service, Date & Time, then
@@ -350,6 +732,16 @@
     initSignOut();
     initSessionGuard();
     initAppointmentForm();
+    initUploadDocumentForm();
+    initMakePaymentForm();
+    initSupportForm();
+    initSettingsSecurityForm();
+    initAdminApptForm();
+    initAddClientForm();
+    initAddServiceForm();
+    initReportForm();
+    initAdminSettingsForm();
+    initSaveAccount();
     initTestNavGuard();
   });
 })();

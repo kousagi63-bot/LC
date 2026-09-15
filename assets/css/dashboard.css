@@ -395,6 +395,12 @@ body.dashboard {
 }
 .dash-card.hoverable:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
 
+.dash-card.contact-card {
+  display: flex;
+  flex-direction: column;
+}
+.dash-card.contact-card .btn { margin-top: auto; align-self: flex-start; }
+
 .dash-card-head {
   display: flex;
   align-items: center;
