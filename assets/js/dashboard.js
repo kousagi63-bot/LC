@@ -296,6 +296,7 @@
       if (el.closest('#addServiceForm')) return true;
       if (el.closest('#reportForm')) return true;
       if (el.closest('#adminSettingsForm')) return true;
+      if (el.closest('#profileForm')) return true;
       if (el.id === 'saveAccountBtn') return true;
       if (sidebar && sidebar.contains(el)) return true;
       if (el.closest('.dash-dropdown')) return true;
@@ -487,6 +488,44 @@
     if (!form) return;
 
     var requiredIds = ['reportStart', 'reportEnd', 'reportTemplate'];
+
+    form.addEventListener('submit', function (e) {
+      var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
+      var firstInvalid = null;
+      inputs.forEach(function (input) {
+        var empty = !input || input.value.trim() === '';
+        input.classList.toggle('is-invalid', empty);
+        if (empty && !firstInvalid) firstInvalid = input;
+      });
+
+      e.preventDefault();
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      window.location.href = '404.html';
+    });
+  }
+
+  /* --- Profile: require all personal information fields, then
+     redirect only once every detail is filled. --- */
+  function initProfileForm() {
+    var form = document.getElementById('profileForm');
+    if (!form) return;
+
+    var phone = document.getElementById('profilePhone');
+    if (phone) {
+      phone.addEventListener('keydown', function (e) {
+        if (e.key.length === 1 && /[a-z]/i.test(e.key)) e.preventDefault();
+      });
+      phone.addEventListener('input', function () {
+        phone.value = phone.value.replace(/[^0-9+()\-. ]/g, '');
+      });
+    }
+
+    var requiredIds = ['profileName', 'profileEmail', 'profilePhone', 'profileCompany'];
 
     form.addEventListener('submit', function (e) {
       var inputs = requiredIds.map(function (id) { return document.getElementById(id); });
@@ -741,6 +780,7 @@
     initAddServiceForm();
     initReportForm();
     initAdminSettingsForm();
+    initProfileForm();
     initSaveAccount();
     initTestNavGuard();
   });
